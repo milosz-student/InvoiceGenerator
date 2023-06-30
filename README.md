@@ -30,6 +30,7 @@ Here is a list of libraries I have used:
 and a helpful link to the python-docx documentation:
 https://python-docx.readthedocs.io/en/latest/index.html
 
+### main.py
 Here is simple `main.py` with elements that you could see in example image above
 ```python 
 document = Document()  #creating empty document
@@ -51,7 +52,7 @@ for bt in asd.bank_transfers:
 
 document.save(OUTPUT_FILE_PATH)
 ```
-
+### invoice_doc.py
 The code provided in the `invoice_doc.py` file contains functions for generating and formatting invoices in a docx document. Here's a brief description of each function:
 
 - `set_col_widths(table)`: Sets the widths of the table columns.
@@ -65,7 +66,7 @@ The code provided in the `invoice_doc.py` file contains functions for generating
 - `add_balance(document, amount)`: Adds the balance information to the document.
 
 These functions are designed to be used in conjunction with the python-docx library for generating invoices based on data from an Excel file.
-
+### invoice_doc_cfg.py
 The code provided in the `invoice_doc_cfg.py` file sets up various configuration parameters and constants used in the generation of invoices. Here's a brief description of the code:
 
 - `LOGO_FILE_PATH`: Specifies the file path of the logo image used in the invoices.
@@ -82,7 +83,7 @@ The code provided in the `invoice_doc_cfg.py` file sets up various configuration
 - `SELLER_BUYER_FONT_SIZE`: Sets the font size for the seller and buyer information.
 
 These configuration parameters can be customized according to specific requirements. The code utilizes the python-docx library for generating and formatting invoices.
-
+### loader.py
 The provided code in the `loader.py` file defines two classes: `BankTransfer` and `BankTransfers`, which are used for handling bank transfer data.
 
 - `BankTransfer` class represents a single bank transfer and has the following attributes:
@@ -103,5 +104,21 @@ The provided code in the `loader.py` file defines two classes: `BankTransfer` an
   - `load_excel`: Loads bank transfer data from an Excel file using the defined column indexes and adds them to the collection.
 
 These classes are useful for managing and processing bank transfer data. The `BankTransfers` class allows for adding multiple bank transfers, printing their details, and loading data from an Excel file.
+### loader_cfg.py
+The code provided in the `invoice_cfg.py` file sets up various configuration parameters and constants used in the generation of invoices. Here's a brief description of the code:
 
+- `LOGO_FILE_PATH`: Specifies the file path of the logo image used in the invoices.
+- `OUTPUT_FILE_PATH`: Specifies the file path for the generated output document.
+- `SELLER_DATA`: Contains the seller's information, including the name, address, NIP (tax identification number), bank details, and account number.
+- `ITEM_DATA`: Provides an example description of the selling item.
+- `INVOICE_YEAR`: Specifies the year for the invoice.
+- `COMMON_FONT`: Sets the common font style for the document.
+- `CURRENCY`: Specifies the currency used in the invoice.
+- `ITEMS_COL_NAMES`: Contains the column names for the items table in the invoice.
+- `TABLE_FONT_SIZE_BIG`: Sets the font size for larger text in the table.
+- `TABLE_FONT_SIZE_SMALL`: Sets the font size for smaller text in the table.
+- `INVOICE_NUMBER_FONT_SIZE`: Sets the font size for the invoice number.
+- `SELLER_BUYER_FONT_SIZE`: Sets the font size for the seller and buyer information.
+
+These configuration parameters can be customized according to specific requirements. The code utilizes the `python-docx` library for generating and formatting invoices.
 
