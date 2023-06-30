@@ -30,7 +30,7 @@ Here is a list of libraries I have used:
 and a helpful link to the python-docx documentation:
 https://python-docx.readthedocs.io/en/latest/index.html
 
-Here is simple main.py with elements that you could see in example image above
+Here is simple `main.py` with elements that you could see in example image above
 ```python 
 document = Document()  #creating empty document
 
@@ -51,3 +51,57 @@ for bt in asd.bank_transfers:
 
 document.save(OUTPUT_FILE_PATH)
 ```
+
+The code provided in the `invoice_doc.py` file contains functions for generating and formatting invoices in a docx document. Here's a brief description of each function:
+
+- `set_col_widths(table)`: Sets the widths of the table columns.
+- `set_row_height(table)`: Sets the heights of the table rows.
+- `set_margins(document)`: Sets the margins of the document.
+- `add_date(document)`: Adds date information to the document.
+- `add_seller_buyer(document, buyer)`: Adds seller and buyer information to the document.
+- `add_invoice_number(document, invoice_nr)`: Adds the invoice number to the document.
+- `set_cell_font(cell_run, font_name, font_size)`: Sets the font of a cell run.
+- `add_items_table(document, amount)`: Adds the items table to the document.
+- `add_balance(document, amount)`: Adds the balance information to the document.
+
+These functions are designed to be used in conjunction with the python-docx library for generating invoices based on data from an Excel file.
+
+The code provided in the `invoice_doc_cfg.py` file sets up various configuration parameters and constants used in the generation of invoices. Here's a brief description of the code:
+
+- `LOGO_FILE_PATH`: Specifies the file path of the logo image used in the invoices.
+- `OUTPUT_FILE_PATH`: Specifies the file path for the generated output document.
+- `SELLER_DATA`: Contains the seller's information, including the name, address, NIP (tax identification number), bank details, and account number.
+- `ITEM_DATA`: Provides an example description of the selling item.
+- `INVOICE_YEAR`: Specifies the year for the invoice.
+- `COMMON_FONT`: Sets the common font style for the document.
+- `CURRENCY`: Specifies the currency used in the invoice.
+- `ITEMS_COL_NAMES`: Contains the column names for the items table in the invoice.
+- `TABLE_FONT_SIZE_BIG`: Sets the font size for larger text in the table.
+- `TABLE_FONT_SIZE_SMALL`: Sets the font size for smaller text in the table.
+- `INVOICE_NUMBER_FONT_SIZE`: Sets the font size for the invoice number.
+- `SELLER_BUYER_FONT_SIZE`: Sets the font size for the seller and buyer information.
+
+These configuration parameters can be customized according to specific requirements. The code utilizes the python-docx library for generating and formatting invoices.
+
+The provided code in the `loader.py` file defines two classes: `BankTransfer` and `BankTransfers`, which are used for handling bank transfer data.
+
+- `BankTransfer` class represents a single bank transfer and has the following attributes:
+  - `invoice_number`: The invoice number associated with the bank transfer.
+  - `accounting_date`: The date of accounting for the transfer.
+  - `transaction_type`: The type of transaction.
+  - `amount`: The amount of money transferred.
+  - `currency`: The currency of the transfer.
+  - `counterparty_data`: Information about the counterparty involved in the transfer.
+  - `counterparty_account_number`: The account number of the counterparty.
+  - `operation_title`: The title or description of the operation.
+
+  The class also provides a `print` method to display the attributes of a bank transfer.
+
+- `BankTransfers` class represents a collection of bank transfers and has the following methods:
+  - `add`: Adds a `BankTransfer` object to the collection.
+  - `print_all`: Prints the details of all bank transfers in the collection.
+  - `load_excel`: Loads bank transfer data from an Excel file using the defined column indexes and adds them to the collection.
+
+These classes are useful for managing and processing bank transfer data. The `BankTransfers` class allows for adding multiple bank transfers, printing their details, and loading data from an Excel file.
+
+
