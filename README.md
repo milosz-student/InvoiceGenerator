@@ -25,7 +25,7 @@ Here is a list of libraries I have used:
 - *setuptools	68.0.0	68.0.0*
 - *six	1.16.0	1.16.0*
 - *tzdata	2023.3	2023.3*
-- *xlrd	2.0.1	2.0.1 *
+- *xlrd	2.0.1	2.0.1*
 
 and a helpful link to the python-docx documentation:
 https://python-docx.readthedocs.io/en/latest/index.html
