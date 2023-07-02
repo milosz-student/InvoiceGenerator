@@ -26,9 +26,9 @@ def set_margins(document):
 
 
 # Function to add date information to the document
-def add_date(document):
+def add_date(document, payment_day):
     date_info = ["Date of Issue: ", "Payment Date: ", "Payment method: "]
-    date_value = ["1998-02-21", "1997-02-01", "Bank transfer"]
+    date_value = ["1998-02-21", payment_day.strftime('%Y-%m-%d'), "Bank transfer"]
 
     date = document.add_paragraph()
     for i in range(len(date_info)):
